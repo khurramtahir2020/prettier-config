@@ -1,0 +1,51 @@
+{
+  "name": "prettier-config",
+  "version": "0.1.0",
+  "description": "Prettier shared configuration",
+  "main": "index.js",
+  "author": "Khurram Tahir <me@khurram.nl>",
+  "license": "MIT",
+  "keywords": [
+    "prettier",
+    "prettier-config"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:khurramtahir2020/prettier-config.git"
+  },
+  "homepage": "https://github.com/khurramtahir2020/prettier-config",
+  "bugs": "https://github.com/khurramtahir2020/prettier-config/issues",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "replace '/commit/' '/commits/' CHANGELOG.md"
+    }
+  },
+  "scripts": {
+    "commit": "commit",
+    "release": "standard-version"
+  },
+  "peerDependencies": {
+    "prettier": "1.x"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@commitlint/prompt-cli": "^8.1.0",
+    "husky": "^3.1.0",
+    "replace": "^1.1.1",
+    "standard-version": "^7.0.1"
+  }
+}
